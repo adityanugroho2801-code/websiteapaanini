@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Prototype Panel Kontrol: Ergonomi Visual</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>Prototype Panel Kontrol Operator</h1>
+    <p class="sub">
+      Model awal antarmuka untuk ruang kendali lini pengisian botol. Perbandingan desain awal yang padat dengan desain ergonomis berbasis lima prinsip ergonomi visual.
+    </p>
+
+    <div class="bar">
+      <div class="segment" role="group">
+        <button id="bAwal" aria-pressed="false">Desain awal</button>
+        <button id="bErgo" aria-pressed="true">Desain ergonomis</button>
+      </div>
+      <div class="opt">
+        <span>Pengguna:</span>
+        <div class="seg" role="group" aria-label="Tingkat keahlian">
+          <button id="bBaru" aria-pressed="true">Pemula</button>
+          <button id="bAhli" aria-pressed="false">Ahli</button>
+        </div>
+      </div>
+      <button class="go" id="run">Simulasikan peringatan</button>
+    </div>
+
+    <div class="panel v-ergo" id="panel">
+      <div class="banner" role="alert">
+        <span class="warning-icon" aria-hidden="true">⚠</span>
+        <b tekanan Mesin 2 melewati>Batas</b>
+        <button class="act" id="act">Kurangi tekanan</button>
+        <p class="guide" id="guide">
+          Langkah: tekan “Kurangi tekanan”, lalu tunggu angka kembali ke zona aman.
+        </p>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+
+    <section>
+      <h2>Simulasi alur</h2>
+      <div class="flow" id="flow">
+        <div class="step"><b>Input</b>Sensor membaca tekanan</div>
+        <div class="step"><b>Proses</b>Sistem bandingkan dengan batas</div>
+        <div class="step"><b>Output</b>Peringatan tampil</div>
+        <div class="step"><b>Umpan balik</b>Operator bertindak, hasil tampil</div>
+      </div>
+      <p class="cap" id="cap" aria-live="polite">
+        Tekan “Simulasikan peringatan” untuk menjalankan alur.
+      </p>
+    </section>
+
+    <section>
+      <h2>Evaluasi</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Versi</th>
+            <th>Waktu respons operator</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Desain awal</td>
+            <td id="rAwal">Belum diuji</td>
+          </tr>
+          <tr>
+            <td>Desain ergonomis</td>
+            <td id="rErgo">Belum diuji</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="sub evaluation-note">
+        Waktu dihitung sejak peringatan tampil sampai Anda menekan tombol penanganan. Coba kedua versi lalu bandingkan.
+      </p>
+    </section>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
